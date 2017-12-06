@@ -1,0 +1,139 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\sortlist[entry]{nty/global/}
+  \entry{DBLP:journals/corr/FischerDIHHGSCB15}{article}{}
+    \name{author}{9}{}{%
+      {{hash=FP}{%
+         family={Fischer},
+         familyi={F\bibinitperiod},
+         given={Philipp},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=DA}{%
+         family={Dosovitskiy},
+         familyi={D\bibinitperiod},
+         given={Alexey},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=IE}{%
+         family={Ilg},
+         familyi={I\bibinitperiod},
+         given={Eddy},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={H{\"{a}}usser},
+         familyi={H\bibinitperiod},
+         given={Philip},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=HC}{%
+         family={Hazirbas},
+         familyi={H\bibinitperiod},
+         given={Caner},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=GV}{%
+         family={Golkov},
+         familyi={G\bibinitperiod},
+         given={Vladimir},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=vdSP}{%
+         prefix={van\bibnamedelima der},
+         prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod},
+         family={Smagt},
+         familyi={S\bibinitperiod},
+         given={Patrick},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Cremers},
+         familyi={C\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BT}{%
+         family={Brox},
+         familyi={B\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FP+1}
+    \strng{fullhash}{FPDAIEHPHCGVSPvdCDBT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \verb{eprint}
+    \verb 1504.06852
+    \endverb
+    \field{title}{FlowNet: Learning Optical Flow with Convolutional Networks}
+    \verb{url}
+    \verb http://arxiv.org/abs/1504.06852
+    \endverb
+    \field{volume}{abs/1504.06852}
+    \field{journaltitle}{CoRR}
+    \field{eprinttype}{arXiv}
+    \field{year}{2015}
+  \endentry
+
+  \entry{DBLP:journals/corr/GodardAB16}{article}{}
+    \name{author}{3}{}{%
+      {{hash=GC}{%
+         family={Godard},
+         familyi={G\bibinitperiod},
+         given={Cl{\'{e}}ment},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MO}{%
+         family={{Mac Aodha}},
+         familyi={M\bibinitperiod},
+         given={Oisin},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=BGJ}{%
+         family={Brostow},
+         familyi={B\bibinitperiod},
+         given={Gabriel\bibnamedelima J.},
+         giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GCMOBGJ1}
+    \strng{fullhash}{GCMOBGJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \verb{eprint}
+    \verb 1609.03677
+    \endverb
+    \field{title}{Unsupervised Monocular Depth Estimation with Left-Right
+  Consistency}
+    \verb{url}
+    \verb http://arxiv.org/abs/1609.03677
+    \endverb
+    \field{volume}{abs/1609.03677}
+    \field{journaltitle}{CoRR}
+    \field{eprinttype}{arXiv}
+    \field{year}{2016}
+  \endentry
+\endsortlist
+\endinput
