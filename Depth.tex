@@ -106,7 +106,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{DispNet\footcite{DBLP:journals/corr/FischerDIHHGSCB15}}
+\frametitle{DispNet\footcite{DBLP:journals/corr/MayerIHFCDB15} - Overview}
 \center
 \begin{itemize}
 	\item Image-to-image autoencoder structure
@@ -119,15 +119,49 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{DispNet}
+\frametitle{DispNet - Architectural Details}
 \center
 \begin{itemize}
-	\item Image-to-image autoencoder structure
+	\item Fully Convolutional Network\footcite{DBLP:journals/corr/LongSD14}
+	\item Concatenates the ``upconvolution'' results with the features from the ``contractive'' part to recover spatial information lost by downsampling
+	\item Uses smooth L1 loss between the resulted disparity computed at different pyramid levels of the network and the ground-truth
+	\[
+	\lvert d \rvert _{smooth}=
+	\begin{cases}
+	0.5d^2, & if \lvert d \rvert \leq 1\\
+	\lvert d \rvert -0.5, & otherwise\\
+	\end{cases}
+	\]
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Unsupervised Monocular Network\footcite{DBLP:journals/corr/GodardAB16}}
+\frametitle{DispNet - Architectural Details}
+\center
+\begin{itemize}
+	\item The upsampling part of the network can be constructed by using transposed convolutions\footcite{Zeiler:2011:ADN:2355573.2356530} or by using interpolation methods like nearest neighbor or bilinear followed by a convolutional layer to smoothen the results
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{DispNet - Results}
+\center
+\begin{figure}
+	\centering
+	\begin{subfigure}
+		\centering
+    	\includegraphics[width=0.45\textwidth]{original_depth.png}
+    \end{subfigure}
+    \begin{subfigure}
+		\centering
+        \includegraphics[width=0.45\textwidth]{dispnet_estimation.png}
+    \end{subfigure}
+    \caption{Supervised depth estimation}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unsupervised Monocular Network\footcite{DBLP:journals/corr/GodardAB16} - Overview}
 \center
 \begin{itemize}
 	\item Similar architecture as DispNet
@@ -137,6 +171,58 @@
         \includegraphics[width=0.2\textwidth, height=0.5\textheight]{monodepth.png}
         \caption{Unsupervised Monocular Network architecture}
     \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unsupervised Monocular Network - Architectural Details}
+\center
+\begin{itemize}
+	\item Shares the same hourglass structure as DispNet and works the same, up until a point
+	\item Instead of using ground-truth disparity, the network tries to reconstruct the right image from the left one, and vice-versa
+	\item The network tries to achieve the needed disparities as to warp the left and right image using some sampling method
+	\item The sampling method chosen is binilinear sampling as used in Spatial Transformer Networks\footcite{DBLP:journals/corr/JaderbergSZK15}, which is fully differentiable
+	\item Produces disparity estimates at four scales
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unsupervised Monocular Network - Architectural Details}
+\center
+\begin{itemize}
+	\item Uses a three term loss
+	\[
+		C_s=\alpha_{ap}(C^l_{ap}+C^r_{ap})+\alpha_{ds}(C^l_{ds}+C^r_{ds})+\alpha_{lr}(C^l_{lr}+C^r_{lr})
+	\]
+	\item Appearance Matching Loss
+	\[
+		C^l_{ap}=\frac{1}{N}\sum_{i,j}\alpha\frac{1-SSIM(I^l_{ij},\tilde{I}^l_{ij})}{2}+(1-\alpha)\lVert I^l_{ij}-\tilde{I}^l_{ij}\rVert
+	\]
+	\item Disparity Smoothness Loss
+	\[
+		C^l_{ds}=\frac{1}{N}\sum_{i,j} \lvert \partial_x d^l_{ij} \rvert e^{-\lvert \partial_x I^l_{ij} \rvert} + \lvert \partial_y d^l_{ij} \rvert e^{-\lvert \partial_y I^l_{ij} \rvert}
+	\]
+	\item Left-Right Disparity Consistency Loss
+	\[
+		C^l_{lr}=\frac{1}{N}\sum_{i,j} \lvert d^l_{ij} - d^r_{ij + d^l_{ij}} \rvert
+	\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unsupervised Monocular Network - Results}
+\center
+\begin{figure}
+	\centering
+	\begin{subfigure}
+		\centering
+    	\includegraphics[width=0.45\textwidth]{original_depth.png}
+    \end{subfigure}
+    \begin{subfigure}
+		\centering
+        \includegraphics[width=0.45\textwidth]{monodepth_estimation.png}
+    \end{subfigure}
+    \caption{Unsupervised depth estimation}
+\end{figure}
 \end{frame}
 
 \end{document}

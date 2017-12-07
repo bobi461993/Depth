@@ -17,84 +17,6 @@
 \endgroup
 
 \sortlist[entry]{nty/global/}
-  \entry{DBLP:journals/corr/FischerDIHHGSCB15}{article}{}
-    \name{author}{9}{}{%
-      {{hash=FP}{%
-         family={Fischer},
-         familyi={F\bibinitperiod},
-         given={Philipp},
-         giveni={P\bibinitperiod},
-      }}%
-      {{hash=DA}{%
-         family={Dosovitskiy},
-         familyi={D\bibinitperiod},
-         given={Alexey},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=IE}{%
-         family={Ilg},
-         familyi={I\bibinitperiod},
-         given={Eddy},
-         giveni={E\bibinitperiod},
-      }}%
-      {{hash=HP}{%
-         family={H{\"{a}}usser},
-         familyi={H\bibinitperiod},
-         given={Philip},
-         giveni={P\bibinitperiod},
-      }}%
-      {{hash=HC}{%
-         family={Hazirbas},
-         familyi={H\bibinitperiod},
-         given={Caner},
-         giveni={C\bibinitperiod},
-      }}%
-      {{hash=GV}{%
-         family={Golkov},
-         familyi={G\bibinitperiod},
-         given={Vladimir},
-         giveni={V\bibinitperiod},
-      }}%
-      {{hash=vdSP}{%
-         prefix={van\bibnamedelima der},
-         prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod},
-         family={Smagt},
-         familyi={S\bibinitperiod},
-         given={Patrick},
-         giveni={P\bibinitperiod},
-      }}%
-      {{hash=CD}{%
-         family={Cremers},
-         familyi={C\bibinitperiod},
-         given={Daniel},
-         giveni={D\bibinitperiod},
-      }}%
-      {{hash=BT}{%
-         family={Brox},
-         familyi={B\bibinitperiod},
-         given={Thomas},
-         giveni={T\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{FP+1}
-    \strng{fullhash}{FPDAIEHPHCGVSPvdCDBT1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{F}
-    \field{sortinithash}{F}
-    \verb{eprint}
-    \verb 1504.06852
-    \endverb
-    \field{title}{FlowNet: Learning Optical Flow with Convolutional Networks}
-    \verb{url}
-    \verb http://arxiv.org/abs/1504.06852
-    \endverb
-    \field{volume}{abs/1504.06852}
-    \field{journaltitle}{CoRR}
-    \field{eprinttype}{arXiv}
-    \field{year}{2015}
-  \endentry
-
   \entry{DBLP:journals/corr/GodardAB16}{article}{}
     \name{author}{3}{}{%
       {{hash=GC}{%
@@ -134,6 +56,206 @@
     \field{journaltitle}{CoRR}
     \field{eprinttype}{arXiv}
     \field{year}{2016}
+  \endentry
+
+  \entry{DBLP:journals/corr/JaderbergSZK15}{article}{}
+    \name{author}{4}{}{%
+      {{hash=JM}{%
+         family={Jaderberg},
+         familyi={J\bibinitperiod},
+         given={Max},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SK}{%
+         family={Simonyan},
+         familyi={S\bibinitperiod},
+         given={Karen},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=ZA}{%
+         family={Zisserman},
+         familyi={Z\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KK}{%
+         family={Kavukcuoglu},
+         familyi={K\bibinitperiod},
+         given={Koray},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JM+1}
+    \strng{fullhash}{JMSKZAKK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \verb{eprint}
+    \verb 1506.02025
+    \endverb
+    \field{title}{Spatial Transformer Networks}
+    \verb{url}
+    \verb http://arxiv.org/abs/1506.02025
+    \endverb
+    \field{volume}{abs/1506.02025}
+    \field{journaltitle}{CoRR}
+    \field{eprinttype}{arXiv}
+    \field{year}{2015}
+  \endentry
+
+  \entry{DBLP:journals/corr/LongSD14}{article}{}
+    \name{author}{3}{}{%
+      {{hash=LJ}{%
+         family={Long},
+         familyi={L\bibinitperiod},
+         given={Jonathan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SE}{%
+         family={Shelhamer},
+         familyi={S\bibinitperiod},
+         given={Evan},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=DT}{%
+         family={Darrell},
+         familyi={D\bibinitperiod},
+         given={Trevor},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LJSEDT1}
+    \strng{fullhash}{LJSEDT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \verb{eprint}
+    \verb 1411.4038
+    \endverb
+    \field{title}{Fully Convolutional Networks for Semantic Segmentation}
+    \verb{url}
+    \verb http://arxiv.org/abs/1411.4038
+    \endverb
+    \field{volume}{abs/1411.4038}
+    \field{journaltitle}{CoRR}
+    \field{eprinttype}{arXiv}
+    \field{year}{2014}
+  \endentry
+
+  \entry{DBLP:journals/corr/MayerIHFCDB15}{article}{}
+    \name{author}{7}{}{%
+      {{hash=MN}{%
+         family={Mayer},
+         familyi={M\bibinitperiod},
+         given={Nikolaus},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=IE}{%
+         family={Ilg},
+         familyi={I\bibinitperiod},
+         given={Eddy},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=HP}{%
+         family={H{\"{a}}usser},
+         familyi={H\bibinitperiod},
+         given={Philip},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=FP}{%
+         family={Fischer},
+         familyi={F\bibinitperiod},
+         given={Philipp},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Cremers},
+         familyi={C\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=DA}{%
+         family={Dosovitskiy},
+         familyi={D\bibinitperiod},
+         given={Alexey},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BT}{%
+         family={Brox},
+         familyi={B\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MN+1}
+    \strng{fullhash}{MNIEHPFPCDDABT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \verb{eprint}
+    \verb 1512.02134
+    \endverb
+    \field{title}{A Large Dataset to Train Convolutional Networks for
+  Disparity, Optical Flow, and Scene Flow Estimation}
+    \verb{url}
+    \verb http://arxiv.org/abs/1512.02134
+    \endverb
+    \field{volume}{abs/1512.02134}
+    \field{journaltitle}{CoRR}
+    \field{eprinttype}{arXiv}
+    \field{year}{2015}
+  \endentry
+
+  \entry{Zeiler:2011:ADN:2355573.2356530}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=ZMD}{%
+         family={Zeiler},
+         familyi={Z\bibinitperiod},
+         given={Matthew\bibnamedelima D.},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=TGW}{%
+         family={Taylor},
+         familyi={T\bibinitperiod},
+         given={Graham\bibnamedelima W.},
+         giveni={G\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=FR}{%
+         family={Fergus},
+         familyi={F\bibinitperiod},
+         given={Rob},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE Computer Society}%
+    }
+    \strng{namehash}{ZMDTGWFR1}
+    \strng{fullhash}{ZMDTGWFR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{booktitle}{Proceedings of the 2011 International Conference on
+  Computer Vision}
+    \verb{doi}
+    \verb 10.1109/ICCV.2011.6126474
+    \endverb
+    \field{isbn}{978-1-4577-1101-5}
+    \field{pages}{2018\bibrangedash 2025}
+    \field{series}{ICCV '11}
+    \field{title}{Adaptive Deconvolutional Networks for Mid and High Level
+  Feature Learning}
+    \verb{url}
+    \verb http://dx.doi.org/10.1109/ICCV.2011.6126474
+    \endverb
+    \list{location}{1}{%
+      {Washington, DC, USA}%
+    }
+    \field{year}{2011}
   \endentry
 \endsortlist
 \endinput
