@@ -109,7 +109,7 @@
 \frametitle{DispNet\footcite{DBLP:journals/corr/MayerIHFCDB15} - Overview}
 \center
 \begin{itemize}
-	\item Image-to-image autoencoder structure
+	\item Image-to-image with contractive and expanding structure
 \end{itemize}
 \begin{figure}
     \centering
@@ -161,6 +161,15 @@
 \end{frame}
 
 \begin{frame}
+\frametitle{DispNet - Limitations}
+\center
+\begin{itemize}
+	\item Requires ground-truth data which might be expensive to obtain
+	\item Current depth estimation hardware for collecting ground-truth data like LIDAR, Time of flight, Kinect may provide inaccurate predictions caused by environmental factors, which directly affects the network's performance
+\end{itemize}
+\end{frame}
+
+\begin{frame}
 \frametitle{Unsupervised Monocular Network\footcite{DBLP:journals/corr/GodardAB16} - Overview}
 \center
 \begin{itemize}
@@ -181,7 +190,7 @@
 	\item Instead of using ground-truth disparity, the network tries to reconstruct the right image from the left one, and vice-versa
 	\item The network tries to achieve the needed disparities as to warp the left and right image using some sampling method
 	\item The sampling method chosen is binilinear sampling as used in Spatial Transformer Networks\footcite{DBLP:journals/corr/JaderbergSZK15}, which is fully differentiable
-	\item Produces disparity estimates at four scales
+	\item During inference, only the left view image is used (monocular estimation)
 \end{itemize}
 \end{frame}
 
@@ -223,6 +232,23 @@
     \end{subfigure}
     \caption{Unsupervised depth estimation}
 \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unsupervised Monocular Network - Limitations}
+\center
+\begin{itemize}
+	\item There are visible artefacts around the object boundaries due to the pixels in the occlusion region not being visible in both images
+	\item Because this method relies solely on image reconstruction, textureless or transparent surfaces will produce inconsistent depths
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Evaluation metric}
+\center
+\begin{itemize}
+	\item One of the main benchmarks for depth estimation is KITTI 2015\footcite{Menze2015CVPR} and the evaluation metric used is called D1-all, which is the percentage of pixels for which the estimation error is larger than 3px and larger than 5\% of the ground truth disparity at this pixel
+\end{itemize}
 \end{frame}
 
 \end{document}

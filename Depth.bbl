@@ -209,6 +209,33 @@
     \field{year}{2015}
   \endentry
 
+  \entry{Menze2015CVPR}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=MM}{%
+         family={Menze},
+         familyi={M\bibinitperiod},
+         given={Moritz},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Geiger},
+         familyi={G\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MMGA1}
+    \strng{fullhash}{MMGA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{Conference on Computer Vision and Pattern Recognition
+  (CVPR)}
+    \field{title}{Object Scene Flow for Autonomous Vehicles}
+    \field{year}{2015}
+  \endentry
+
   \entry{Zeiler:2011:ADN:2355573.2356530}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=ZMD}{%
