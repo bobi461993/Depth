@@ -236,6 +236,93 @@
     \field{year}{2015}
   \endentry
 
+  \entry{MIFDB16}{inproceedings}{}
+    \name{author}{7}{}{%
+      {{hash=N}{%
+         family={N.Mayer},
+         familyi={N\bibinitperiod},
+      }}%
+      {{hash=E}{%
+         family={E.Ilg},
+         familyi={E\bibinitperiod},
+      }}%
+      {{hash=P}{%
+         family={P.H{\"a}usser},
+         familyi={P\bibinitperiod},
+      }}%
+      {{hash=P}{%
+         family={P.Fischer},
+         familyi={P\bibinitperiod},
+      }}%
+      {{hash=D}{%
+         family={D.Cremers},
+         familyi={D\bibinitperiod},
+      }}%
+      {{hash=A}{%
+         family={A.Dosovitskiy},
+         familyi={A\bibinitperiod},
+      }}%
+      {{hash=T}{%
+         family={T.Brox},
+         familyi={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{N+1}
+    \strng{fullhash}{NEPPDAT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{booktitle}{IEEE International Conference on Computer Vision and
+  Pattern Recognition (CVPR)}
+    \field{note}{arXiv:1512.02134}
+    \field{title}{A Large Dataset to Train Convolutional Networks for
+  Disparity, Optical Flow, and Scene Flow Estimation}
+    \verb{url}
+    \verb http://lmb.informatik.uni-freiburg.de/Publications/2016/MIFDB16
+    \endverb
+    \field{year}{2016}
+  \endentry
+
+  \entry{Wang:2004:IQA:2319031.2320551}{article}{}
+    \name{author}{4}{}{%
+      {{hash=WZ}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Zhou},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=BAC}{%
+         family={Bovik},
+         familyi={B\bibinitperiod},
+         given={A.\bibnamedelima C.},
+         giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=SHR}{%
+         family={Sheikh},
+         familyi={S\bibinitperiod},
+         given={H.\bibnamedelima R.},
+         giveni={H\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=SEP}{%
+         family={Simoncelli},
+         familyi={S\bibinitperiod},
+         given={E.\bibnamedelima P.},
+         giveni={E\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WZ+1}
+    \strng{fullhash}{WZBACSHRSEP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{title}{Image Quality Assessment: From Error Visibility to Structural
+  Similarity}
+    \field{journaltitle}{Trans. Img. Proc.}
+    \field{year}{2004}
+  \endentry
+
   \entry{Zeiler:2011:ADN:2355573.2356530}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=ZMD}{%

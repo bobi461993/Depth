@@ -29,7 +29,7 @@
 \frametitle{Problem Formulation}
 \center
 \begin{itemize}
-	\item Given a pair of stereo images, how to estimate the depth of the existing objects?
+	\item Given a pair of stereo images, how to estimate the depth of the scene?
 \end{itemize}
 \end{frame}
 
@@ -39,7 +39,7 @@
 \begin{itemize}
 	\item Disparity represents the difference of perspective created by the horizontal or vertical separation of two cameras
 	\item The human brain processes disparity information from both eyes to estimate the depth of real world objects
-	\item Disparity is inverse proportional with depth; given the basline distance \(b\) between the cameras and the camera focal lenght \(f\), the depth \(\hat{d}\) from the predicted disparity \(d\) is simply \(\hat{d}=bf/d\)
+	\item Disparity is inverse proportional with depth; given the baseline distance \(b\) between the cameras and the camera focal lenght \(f\), the depth \(\hat{d}\) from the predicted disparity \(d\) is simply \(\hat{d}=bf/d\)
 	\item Objects closer to the camera have bigger disparities, whilst objects that are farther have smaller disparities
 \end{itemize}
 \end{frame}
@@ -50,6 +50,7 @@
 \begin{itemize}
 	\item Given a pair of rectified \footnote{Vertically aligned} stereo images as input, build a model which can accurately predict the disparity per-pixel (i.e. learn the \(\Delta\) values with which every pixel from the left image is shifted from the right one on the \(x\) axis)
 	\item Such a system can be modeled by a Convolutional Neural Network
+	\item The dataset used for experiments is FlyingThings3D\footcite{MIFDB16}
 \end{itemize}
 \end{frame}
 
@@ -100,7 +101,7 @@
 		\begin{itemize}
 			\item Does not require any form of ground-truth
 			\item Based on an image reconstruction loss
-			\item Has artefacts around the edges of objects, caused by occlusion
+			\item Has artefacts around object boundaries, caused by occlusion
 		\end{itemize}
 \end{itemize}
 \end{frame}
@@ -126,10 +127,10 @@
 	\item Concatenates the ``upconvolution'' results with the features from the ``contractive'' part to recover spatial information lost by downsampling
 	\item Uses smooth L1 loss between the resulted disparity computed at different pyramid levels of the network and the ground-truth
 	\[
-	\lvert d \rvert _{smooth}=
+	\lvert x \rvert _{smooth}=
 	\begin{cases}
-	0.5d^2, & if \lvert d \rvert \leq 1\\
-	\lvert d \rvert -0.5, & otherwise\\
+	0.5x^2, & if \lvert x \rvert \leq 1\\
+	\lvert x \rvert -0.5, & otherwise\\
 	\end{cases}
 	\]
 \end{itemize}
@@ -240,15 +241,78 @@
 \begin{itemize}
 	\item There are visible artefacts around the object boundaries due to the pixels in the occlusion region not being visible in both images
 	\item Because this method relies solely on image reconstruction, textureless or transparent surfaces will produce inconsistent depths
+	\item Complex objective loss
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Evaluation metric}
+\frametitle{Benchmark Evaluation}
 \center
 \begin{itemize}
 	\item One of the main benchmarks for depth estimation is KITTI 2015\footcite{Menze2015CVPR} and the evaluation metric used is called D1-all, which is the percentage of pixels for which the estimation error is larger than 3px and larger than 5\% of the ground truth disparity at this pixel
+	\item On this benchmark, DispNet achieves a D1-all error of 4.34\%, while the unsupervised network gets a 23.81\% error
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusions}
+\center
+\begin{itemize}
+	\item Unsupervised methods work more alike the brain in the sense that depth is learnt by image reconstruction enforcement
+	\item There should be a preferance towards unsupervised models due to their lack of needing precise estimations
+	\item For the moment, supervised networks perform much better than their unsupervised counterparts on popular benchmarks
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Technical Slides - Transposed Convolutions}
+\begin{itemize}
+	\item The input (bottom) is specially padded and then a traditional convolutional layer is applied
+\end{itemize}
+\begin{figure}
+	\centering
+	\begin{subfigure}
+		\centering
+    	\includegraphics[width=0.4\textwidth]{transposed_convolution.png}
+    \end{subfigure}
+    \begin{subfigure}
+		\centering
+        \includegraphics[width=0.4\textwidth]{transposed_convolution2.png}
+    \end{subfigure}
+    \caption{Transposed Convolutions}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Technical Slides - Structural Similarity (SSIM)\footcite{Wang:2004:IQA:2319031.2320551}}
+\center
+	\[
+		SSIM(x,y) = \frac{(2 \mu_x \mu_y + c_1)(2\sigma_{xy} + c_2)}{(\mu_x^2 + \mu_y^2 + c_1)(\sigma_x^2 + \sigma_y^2 + c_2)}
+	\]
+\begin{itemize}
+	\item \(\mu_x\) the average of \(x\), \(\mu_y\) the average of \(y\);
+	\item \(\sigma_x^2\) the variance of \(x\), \(\sigma_y^2\) the variance of \(y\);	
+	\item \(\sigma_{xy}\) the covariance of \(x\) and \(y\);
+	\item \(c1=(k_1L)^2, c2=(k_2L)^2\) two variables to stabilize the division with weak denominator;
+	\item L the dynamic range of the pixel-values (usually \(2^{\text{\#bits-per-pixel}}-1\));
+	\item \(k_1=0.01\) and \(k_2=0.03\) by default.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Technical Slides - Smooth L1 Loss}
+\[
+	\lvert x \rvert _{smooth}=
+	\begin{cases}
+	0.5x^2, & if \lvert x \rvert \leq 1\\
+	\lvert x \rvert -0.5, & otherwise\\
+	\end{cases}
+	\]
+\begin{figure}
+    \centering
+        \includegraphics[width=0.5\textwidth]{l1_smooth.png}
+        \caption{Plot for smooth L1}
+    \end{figure}
 \end{frame}
 
 \end{document}
